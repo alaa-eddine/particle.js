@@ -28,7 +28,7 @@
 		var speed = Math.random() * 60 + 20;
 		var randomBlue = ((Math.random() * 80) | 0) + 175;
 		var color = 'rgb(0, 0, ' + randomBlue + ')';
-		var size = Math.random() * 6 + 4;
+		var size = Math.random() * 6 + 6;
 		var life = Math.random() + 2;
 		particles.push(new ps.Particle(startingPosition, angle, speed, life, color, size));
 	}
@@ -59,7 +59,7 @@
 		particles.forEach(function(particle) {
 			if (particle.life > 0) {
 				context.fillStyle = particle.color;
-				context.globalAlpha = particle.life / particle.startingLife;
+				context.globalAlpha = particle.alpha;
 				context.beginPath();
 				context.arc(particle.pos.x, particle.pos.y, particle.size, 0, Math.PI * 2);
 				context.closePath();
