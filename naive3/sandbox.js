@@ -121,6 +121,8 @@
 
 			var manyInSequenceButton = document.getElementById('manyInSequence');
 			manyInSequenceButton.onclick = onManyInSequenceClick;
+
+			draw();
 		}
 	};
 })();
