@@ -97,13 +97,13 @@
 			};
 
 			var singleButton = document.getElementById('single');
-			singleButton.addEventListener('click', onSingleClick, false);
+			singleButton.onclick = onSingleClick;
 
 			var manyAtOnceButton = document.getElementById('manyAtOnce');
-			manyAtOnceButton.addEventListener('click', onManyAtOnceClick, false);
+			manyAtOnceButton.onclick = onManyAtOnceClick;
 
 			var manyInSequenceButton = document.getElementById('manyInSequence');
-			manyInSequenceButton.addEventListener('click', onManyInSequenceClick, false);
+			manyInSequenceButton.onclick = onManyInSequenceClick;
 		},
 
 		go: function() {
