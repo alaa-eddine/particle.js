@@ -6,7 +6,9 @@
 		window.webkitRequestAnimationFrame ||
 		window.msRequestAnimationFrame ||
 		window.oRequestAnimationFrame || function(callback) {
-		window.setTimeout(callback, 1 / 60 * 1000);
+		window.setTimeout(function() {
+			callback(new Date().getTime());	
+		}, 1 / 60 * 1000);
 	};
 
 	var particles = [];
