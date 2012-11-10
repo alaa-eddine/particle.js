@@ -16,6 +16,7 @@
 	var canvas;
 	var context;
 	var startingPosition;
+	var duration = 0;
 
 	function coinFlip() {
 		return Math.random() > .5 ? 1 : -1;
@@ -26,7 +27,16 @@
 	};
 
 	function onSingleClick() {
-		particles.push(new ps.Particle(startingPosition, 90 + Math.random() * 20 * coinFlip(), Math.random() * 60 + 20, Math.random() * 1 + 2));
+		var shouldPlay = duration <= 0;
+
+		var life = Math.random() + 2;
+		particles.push(new ps.Particle(startingPosition, 90 + Math.random() * 20 * coinFlip(), Math.random() * 60 + 20, life));
+
+		duration = Math.max(duration, life);
+
+		if(shouldPlay) {
+			play(new Date().getTime());
+		}
 	}
 
 	function onManyAtOnceClick() {
@@ -68,10 +78,16 @@
 	}
 
 	function play(timestamp) {
+		if(duration <= 0) {
+			return;
+		}
+
 		var delta = timestamp - (lastTimestamp || timestamp);
 		lastTimestamp = timestamp;
 
 		delta /= 1000;
+
+		duration -= delta;
 
 		for(var i = 0, l = particles.length; i < l; ++i) {
 			particles[i].update(delta);
@@ -98,10 +114,6 @@
 
 			var manyInSequenceButton = document.getElementById('manyInSequence');
 			manyInSequenceButton.onclick = onManyInSequenceClick;
-		},
-
-		go: function() {
-			play(new Date().getTime());
 		}
 	};
 })();
