@@ -37,7 +37,7 @@
 		var life = Math.random() + 2;
 		particles.push(new ps.Particle(startingPosition, angle, speed, life, color, size));
 
-		duration = Math.max(duration, life);
+		duration = Math.max(duration, life * 1.5);
 
 		if(shouldPlay) {
 			play(new Date().getTime());

@@ -31,7 +31,7 @@
 		var life = Math.random() + 2;
 		particles.push(new ps.Particle(startingPosition, 90 + Math.random() * 180 * coinFlip(), Math.random() * 60 + 20, life));
 
-		duration = Math.max(duration, life);
+		duration = Math.max(duration, life * 1.5);
 
 		if(shouldPlay) {
 			play(new Date().getTime());
