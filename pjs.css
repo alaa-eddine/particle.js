@@ -1,5 +1,6 @@
 .x-panel-header, .x-panel-body {
 	background: none;
+	background-image: none !important;
 	border: 0px;
 	box-shadow: none;
 	-webkit-box-shadow: none;
@@ -11,15 +12,12 @@
 }
 
 .x-panel-header-text {
-	font-size: 16px;
-	color: black;
+	font-size: 14px;
+	color: #666;
 }
 
 .x-panel {
-	border: 2px solid gray;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	border: 1px solid gray;
 
 	padding: 10px;
 
@@ -33,7 +31,6 @@
 }
 
 label {
-	font-weight: bold;
 }
 
 .inner-panel.x-panel {
@@ -68,4 +65,8 @@ label {
 	margin-bottom: 15px !important;
 	margin-left: 40px !important;
 	margin-right: 4px !important;
+}
+
+canvas {
+	background-color black;
 }
