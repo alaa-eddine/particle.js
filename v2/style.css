@@ -74,7 +74,7 @@
     height: 27px;
     line-height: 27px;
     overflow: hidden;
-    padding: 0 4px 0 15px; }
+    padding: 0 4px 0 15px !important; }
   .dg li.textarea {
     height: 100px; }
   .dg li.folder {
