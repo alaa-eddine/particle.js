@@ -11,6 +11,13 @@
   /** Controller placement */
   /** Shorter number boxes when slider is present. */
   /** Ensure the entire boolean and function row shows a hand */ }
+.dg.ac {
+	   position: fixed;
+	   top: 0;
+	   left: 0;
+	   right: 0;
+   height: 0;
+	   z-index: 0; }
   .dg ul {
     list-style: none;
     margin: 0;
