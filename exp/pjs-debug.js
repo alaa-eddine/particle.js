@@ -5335,7 +5335,8 @@ TIFFParser.prototype = {
 
 		return this.canvas;
 	},
-}
+};
+
 (function() {
 	var circleFnSrc = 'var r = pjs.toRad(value.x);\n' + 'return {\n' + 'x: Math.cos(r) * 70,\n' + 'y: Math.sin(r) * 70\n' + '};';
 
