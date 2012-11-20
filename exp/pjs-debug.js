@@ -1488,6 +1488,7 @@
 
 		if (!paused) {
 			lastTimestamp = 0;
+pjs.ps.reset();
 			draw(new Date().getTime());
 		}
 	};
