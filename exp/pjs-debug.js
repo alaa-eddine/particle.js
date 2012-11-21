@@ -1489,6 +1489,9 @@
 		if (!paused) {
 			lastTimestamp = 0;
 			draw(new Date().getTime());
+setTimeout(function() {
+	pjs.ps.reset();
+}, 10);
 		}
 	};
 })();
