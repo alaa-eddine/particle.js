@@ -1218,12 +1218,6 @@
 			document.getElementById('canvasContainer').appendChild(canvas);
 			initStats('canvasContainer');
 
-			setTimeout(function() {
-				pjs.ps.reset();
-				if(includeTransformFn) {
-					pjs.ps.transformFn = pjs.circleFnSrc;
-				}
-			}, 10);
 			draw(new Date().getTime());
 		};
 	};
@@ -1237,6 +1231,12 @@
 
 		if (!paused) {
 			lastTimestamp = 0;
+			setTimeout(function() {
+				pjs.ps.reset();
+				if(includeTransformFn) {
+					pjs.ps.transformFn = pjs.circleFnSrc;
+				}
+			}, 10);
 			draw(new Date().getTime());
 		}
 	};
@@ -1349,7 +1349,7 @@ k.id="msText";k.style.cssText="color:#0f0;font-family:Helvetica,Arial,sans-serif
 a+"px",m=b,r=0);return b},update:function(){l=this.end()}}};
 
 (function() {
-	var circleFnSrc = 'var r = pjs.toRad(value.x);\n' + 'return {\n' + 'x: Math.cos(r) * 70,\n' + 'y: Math.sin(r) * 70\n' + '};';
+	var circleFnSrc = 'var r = pjs.toRad(value.x);\n' + 'return {\n' + 'x: Math.cos(r) * 80,\n' + 'y: Math.sin(r) * 80\n' + '};';
 
 	this.pjs = this.pjs || {};
 	this.pjs.circleFnSrc = circleFnSrc;
